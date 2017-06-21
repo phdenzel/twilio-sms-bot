@@ -133,3 +133,7 @@ def wiki_APIrequest(message):
         # handle problems, that is degeneracy of answers
         answer = "Request was not found using Wikipedia. Be more specific?"
     return answer
+
+
+if __name__ == '__main__':
+    app.run()
