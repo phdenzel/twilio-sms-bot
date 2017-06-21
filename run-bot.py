@@ -17,9 +17,11 @@ def sms():
     number = request.form['From']
     message = request.form['Body']      # text from SMS
     response = twiml.Response()         # init a Twilio response
-    
+    print("Message obtained by {}:".format(number))
+    print("{}".format(message))
     reply = formulate_reply(message)    # formulate answer to message
-    response.message('Hi\n\n' + reply)  # text back
+    print("Reply: {}".format(reply))
+    response.message('Hi\n' + reply)  # text back
     return str(response)
 
 
