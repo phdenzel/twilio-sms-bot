@@ -9,13 +9,15 @@ app = Flask(__name__)
 # Main function
 # triggered by a POST request by ngrok
 # when an SMS is received, Twilio will send the POST
-@app.route('/', methods=['POST'])
+@app.route('/sms', methods=['POST'])
 def sms():
     """
     Use Twilio API to reply to texts
     """
+    number = request.form['From']
     message = request.form['Body']      # text from SMS
     response = twiml.Response()         # init a Twilio response
+    
     reply = formulate_reply(message)    # formulate answer to message
     response.message('Hi\n\n' + reply)  # text back
     return str(response)
