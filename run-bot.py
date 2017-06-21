@@ -1,6 +1,6 @@
 # Imports
 from flask import Flask, request
-from twilio import twiml
+from twilio.twiml.messaging_response import MessagingResponse
 
 # connect to local host w/ Flask (and later to www through ngrok)
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def sms():
     """
     number = request.form['From']
     message = request.form['Body']      # text from SMS
-    response = twiml.Response()         # init a Twilio response
+    response = MessagingResponse()         # init a Twilio response
     print("Message obtained by {}:".format(number))
     print("{}".format(message))
     reply = formulate_reply(message)    # formulate answer to message
