@@ -1,0 +1,5 @@
+Flask>=0.8
+twilio>=3.3.6
+wikipedia>=1.4.0
+pyowm>=2.6.1
+wolframalpha>=3.0

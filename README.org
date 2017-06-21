@@ -1,0 +1,57 @@
+#+TITLE: twilio-sms-bot
+#+AUTHOR: phdenzel
+
+*** Install
+
+    To install the ~twilio-sms-bot~ simply run the ~install.sh~ script like so
+    #+BEGIN_SRC shell
+      ./install.sh
+    #+END_SRC
+    This will start a virtual python environment and installs all necessary
+    python modules.
+
+    However, for this to work ~virtualenv~ (and ~python~ for that matter) is
+    required.
+
+    A ~python~ install tutorial is easy enough to find with Google... for a
+    local install go to [https://github.com/phdenzel/local-python-install].
+
+    For ~virtualenv~ type
+    #+BEGIN_SRC shell
+      pip install virtualenv
+    #+END_SRC
+    or something equivalent.
+
+*** Requirements
+    
+    The ~twilio-sms-bot~ requires a Twilio API Key.
+    You can sign up for a trial account at [https://www.twilio.com/] by
+    pressing "Get a free API key".
+    To make the app accessible over the WWW, we furthermore need to download
+    ~ngrok~ at [https://ngrok.com/download].
+
+*** Run the bot
+
+    To start the bot type
+    #+BEGIN_SRC shell
+      source venv/bin/activate
+      python run-bot.py
+    #+END_SRC
+    This runs the bot in your local host.
+
+    Open another terminal and run ~ngrok~
+    #+BEGIN_SRC shell
+      ngrok http <port>
+    #+END_SRC
+    replace ~<port>~ by the port number (the number after the colon in local
+    host address ~http://127.0.0.1:5000~, in this case 5000).
+    
+    Copy the forwarding HTTPS address and paste it into your Twilio messaging
+    webhook text field (if you haven't done so, choose a number (sms enabled),
+    on the "Console Dashboard", click on "Manage Numbers", click on your
+    number, and find the text field under "Messaging: A message comes in").
+
+*** More
+
+    To fully customize the ~twilio-sms-bot~, add more features/API calls to the
+    ~formulate_reply~ function yourself.

@@ -1,0 +1,3 @@
+*** API keys
+
+Put all your API keys here, sorted in directories with API keys as filenames inside.
