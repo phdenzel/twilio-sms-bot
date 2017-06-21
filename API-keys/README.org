@@ -1,3 +1,4 @@
 *** API keys
 
-Put all your API keys here, sorted in directories with API keys as filenames inside.
+Put all your API keys here, sorted in directories with API keys
+as files' names inside.
